@@ -1,0 +1,19 @@
+{% block sidebar %}
+{% load static %}
+
+<!-- Sidebar Widgets Column -->
+<div class="col-md-3 float-right mx-auto">
+<div class="card my-3">
+        <h5 class="card-header">About me</h5>
+    <div class="card-body" id="sidebar">
+        <div class="d-flex justify-content-center"><img id="profile-picture" src="{% static 'blog/my_profile_image.png' %} " alt="profile image" class="img-thumbnail rounded" /></div>
+        <div class="p-3">
+            <p class="card-text">My name is Alejandra and I'm learning Python & Django to become a backend developer. I also love videogames, anime, plants and decorating my home.</p>
+            <p class="card-text">You can contact me at <a href="mailto:alejandramartin@outlook.com"> alejandramartin@outlook.com </a> </p>
+            <p class="card-text">You can also visit <a href="https://AMartin1987.github.io"> my portfolio</a>. </p>
+        </div>    
+    </div>
+</div>
+</div>
+
+{% endblock sidebar %}

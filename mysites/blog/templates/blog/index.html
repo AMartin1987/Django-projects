@@ -1,0 +1,36 @@
+{% extends "blog/layout.html" %}
+
+
+{% block heading %}
+                    <h3 class=" site-heading my-4 mt-3 text-white"> My web dev diary 📔✨ </h3>
+                    <p class="text-light"> Notes on my journey learning to code with Python & Django
+                    </p>
+{% endblock heading %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-9 mt-3 left">
+            {% for post in post_list %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">{{ post.title }}</h3>
+                    <p class="card-text text-muted h6">{{ post.author }} | Published on: {{ post.created_on}} </p>
+                    <div class="p-3 card-text">{{ post.content|slice:":200"|safe }}...</div>
+                    <div class="d-flex">
+                        <small><p class="text-muted h7"> Categories: </p></small>&nbsp; 
+                    {% for category in post.category.all %}
+                    <small><p> <a href="{% url 'posts_by_category' category.id %}">{{  category.name  }} </a>   &nbsp; </p></small>
+                    {% endfor %}
+                    </div>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read more &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        {% block sidebar %} {% include 'blog/sidebar.html' %} {% endblock sidebar %}
+    </div>
+</div>
+{%endblock content%}
