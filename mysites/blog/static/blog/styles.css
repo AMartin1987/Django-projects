@@ -7,10 +7,17 @@ body {
 
     background-color: rgb(249, 249, 249);
     color: rgb(76,68,60)!important;
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
 }
 a {
     color: rgb(190, 174, 226)!important;
     text-decoration: none!important;
+}
+
+img {
+    overflow:scroll;
+    width: -webkit-fill-available;
 }
 
 .text-muted:hover{
@@ -51,7 +58,7 @@ a {
 
 .card {
     box-shadow: 0 16px 48px #E3E7EB;
-    min-width: fit-content;
+
 }
 
 .lavender-font{
@@ -69,8 +76,6 @@ a {
     }
 
 }
-
-
 
 .card-header {
     background-color: rgb(247, 219, 240)!important;
