@@ -90,16 +90,12 @@ WSGI_APPLICATION = 'mysites.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        #'URL': os.environ.get('DATABASE_URL'),
-        #'NAME': os.environ.get('PGDATABASE'),
-        'NAME': 'myblog',
+        'URL': os.environ.get('DATABASE_URL'),
+        'NAME': os.environ.get('PGDATABASE'),
         'USER': os.environ.get('PGUSER'),
-        #'PASSWORD': os.environ.get('PGPASSWORD'),
-        'PASSWORD': 'Kuraineko007',
-        #'HOST': os.environ.get('PGHOST'),
-        'HOST': 'localhost',
-        #'PORT': os.environ.get('PGPORT'),
-        'PORT': '5432',
+        'PASSWORD': os.environ.get('PGPASSWORD'),
+        'HOST': os.environ.get('PGHOST'),
+        'PORT': os.environ.get('PGPORT'),
     }
 }
 
