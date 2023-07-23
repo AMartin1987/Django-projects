@@ -47,8 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'ckeditor', # CKEditor config
-    'ckeditor_uploader', # CKEditor media uploader
+    'ckeditor', #CKEditor config
+    'ckeditor_uploader', #CKEditor media uploader
+    'django.contrib.sites', #
 ]
 
 MIDDLEWARE = [
@@ -89,12 +90,16 @@ WSGI_APPLICATION = 'mysites.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'URL': os.environ.get('DATABASE_URL'),
-        'NAME': os.environ.get('PGDATABASE'),
+        #'URL': os.environ.get('DATABASE_URL'),
+        #'NAME': os.environ.get('PGDATABASE'),
+        'NAME': 'myblog',
         'USER': os.environ.get('PGUSER'),
-        'PASSWORD': os.environ.get('PGPASSWORD'),
-        'HOST': os.environ.get('PGHOST'),
-        'PORT': os.environ.get('PGPORT'),
+        #'PASSWORD': os.environ.get('PGPASSWORD'),
+        'PASSWORD': 'Kuraineko007',
+        #'HOST': os.environ.get('PGHOST'),
+        'HOST': 'localhost',
+        #'PORT': os.environ.get('PGPORT'),
+        'PORT': '5432',
     }
 }
 
