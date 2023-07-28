@@ -99,7 +99,8 @@ DATABASES = {
         'PASSWORD': 'Kuraineko',
         'HOST': 'localhost',
         #'HOST': os.environ.get('PGHOST'),
-        'PORT': os.environ.get('PGPORT'),
+        #'PORT': os.environ.get('PGPORT'),
+        'PORT': '5432',
     }
 }
 
