@@ -90,17 +90,12 @@ WSGI_APPLICATION = 'mysites.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        #'URL': os.environ.get('DATABASE_URL'),
-        #'NAME': os.environ.get('PGDATABASE'),
-        'NAME': 'verceldb',
-        #'USER': os.environ.get('PGUSER'),
-        'USER': 'default',
-        #'PASSWORD': os.environ.get('PGPASSWORD'),
-        'PASSWORD': '4DJbVG5HcMlB',
-        'HOST': 'ep-patient-queen-230316-pooler.eu-central-1.postgres.vercel-storage.com',
-        #'HOST': os.environ.get('PGHOST'),
-        #'PORT': os.environ.get('PGPORT'),
-        'PORT': '5432',
+        'URL': os.environ.get('DATABASE_URL'),
+        'NAME': os.environ.get('PGDATABASE'),
+        'USER': os.environ.get('PGUSER'),
+        'PASSWORD': os.environ.get('PGPASSWORD'),
+        'HOST': os.environ.get('PGHOST'),
+        'PORT': os.environ.get('PGPORT'),
         
     }
 }
