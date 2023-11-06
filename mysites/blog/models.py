@@ -28,7 +28,6 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now= True)
     #content = models.TextField()
     content = RichTextUploadingField() # CKEditor Rich Text Field
-    
     category = models.ManyToManyField(Category, related_name="categories")
     created_on = models.DateTimeField(auto_now_add=False, editable=True)
     status = models.IntegerField(choices=STATUS, default=0)
