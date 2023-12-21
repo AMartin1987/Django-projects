@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh"]
 
 
 # Application definition
@@ -93,8 +93,8 @@ DATABASES = {
         'URL': os.environ.get('DATABASE_URL'),
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('DB_USER'),
-        #'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'PASSWORD': 'bf6JBuoROW7p',
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        #'PASSWORD': 'bf6JBuoROW7p',
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT'),
         
