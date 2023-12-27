@@ -1,5 +1,6 @@
 /* Layout */
 
+
 html {
     color: rgb(76,68,60)!important;
 }
@@ -19,6 +20,10 @@ img {
     overflow:scroll;
     width: -webkit-fill-available;
 }
+
+.pre {
+    background-color:  lightgrey;
+  }
 
 .text-muted:hover{
     color:black;
