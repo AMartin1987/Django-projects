@@ -141,8 +141,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = BASE_DIR / 'staticfiles_build'
 
-# Esto es lo que genera el styles.aaa8...css
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
 
 # ckeditor upload path
 
