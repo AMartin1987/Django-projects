@@ -1,15 +1,25 @@
 {
-  "buildCommand": "./build_files.sh",
-  "outputDirectory": "staticfiles_build",
-  "cleanUrls": true,
+  "version": 2,
+  "builds": [
+    {
+      "src": "manage.py",
+      "use": "@vercel/python"
+    }
+  ],
   "routes": [
     {
       "src": "/static/(.*)",
+      "headers": { "cache-control": "max-age=31536000, immutable" },
       "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/mysites/wsgi.py"
+      "dest": "manage.py"
     }
-  ]
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "mysites.settings",
+    "PYTHONUNBUFFERED": "1"
+  }
 }
+
