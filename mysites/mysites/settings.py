@@ -137,6 +137,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')  # carpeta donde se va
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = []
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # ckeditor upload path
