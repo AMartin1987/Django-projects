@@ -139,9 +139,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'blog' / 'static',
 ]
 
-STATIC_ROOT = BASE_DIR / 'staticfiles_build'
+STATIC_ROOT = BASE_DIR / 'staticfiles_build',
 
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # ckeditor upload path
 
