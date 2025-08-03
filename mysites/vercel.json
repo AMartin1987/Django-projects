@@ -1,27 +1,25 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "mysites/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "includeFiles": ["staticfiles_build/**", "mysites/**"]
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/(.*)", "dest": "mysites/wsgi.py" }
+    {
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "max-age=31536000, immutable" },
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "mysites/wsgi.py"
+    }
   ],
   "env": {
     "DJANGO_SETTINGS_MODULE": "mysites.settings",
     "PYTHONUNBUFFERED": "1"
-  },
-  "build": {
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "mysites.settings"
-    },
-    "commands": [
-      "python manage.py collectstatic --noinput"
-    ]
   }
 }
+
