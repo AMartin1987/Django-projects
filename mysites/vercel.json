@@ -4,6 +4,7 @@
     {
       "src": "mysites/wsgi.py",
       "use": "@vercel/python"
+      
     }
   ],
   "routes": [
