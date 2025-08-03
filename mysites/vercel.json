@@ -10,7 +10,7 @@
     {
       "src": "/static/(.*)",
       "headers": { "cache-control": "max-age=31536000, immutable" },
-      "dest": "/static/$1"
+      "dest": "/mysites/staticfiles_build/$1"
     },
     {
       "src": "/(.*)",
