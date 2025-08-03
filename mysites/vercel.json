@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "mysite/wsgi.py",
+      "src": "mysites/wsgi.py",
       "use": "@vercel/python"
     }
   ],
@@ -14,11 +14,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "mysite/wsgi.py"
+      "dest": "mysites/wsgi.py"
     }
   ],
   "env": {
-    "DJANGO_SETTINGS_MODULE": "mysite.settings",
+    "DJANGO_SETTINGS_MODULE": "mysites.settings",
     "PYTHONUNBUFFERED": "1"
   }
 }
