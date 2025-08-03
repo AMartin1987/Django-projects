@@ -4,6 +4,7 @@
 # source venv311/bin/activate
 
 echo "Ejecutando migraciones..."
+pip install -r requirements.txt
 python manage.py migrate
 
 echo "Reuniendo archivos estáticos..."
