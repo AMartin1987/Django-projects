@@ -14,10 +14,8 @@ from whitenoise import WhiteNoise
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysites.settings')
 
 application = get_wsgi_application()
+app = WhiteNoise(application, root='/var/task/staticfiles_build/')
 
-# Usa la ruta STATIC_ROOT definida en settings.py
-from django.conf import settings
-application = WhiteNoise(application, root=settings.STATIC_ROOT)
 
 
 
