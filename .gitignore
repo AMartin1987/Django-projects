@@ -1,5 +1,9 @@
+dump_vercel.backup
+mysites\staticfiles_build
+
 #Python Environment
-venv313
+venv311
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
