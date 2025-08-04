@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "manage.py",
+      "src": "vercel_wsgi.py",
       "use": "@vercel/python"
     }
   ],
@@ -14,10 +14,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "manage.py"
+      "dest": "vercel_wsgi.py"
     }
   ]
 }
+
 
 
 
