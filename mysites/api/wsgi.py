@@ -12,8 +12,14 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings')
 
-app = get_wsgi_application()
+# Establece la variable de entorno para que Django sepa qué configuración usar
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings')
 
+# Obtiene la aplicación WSGI de Django
+application = get_wsgi_application()
+
+# Añade esta línea para compatibilidad con Vercel
+# Vercel busca una variable llamada 'app'
 app = application
 
 
