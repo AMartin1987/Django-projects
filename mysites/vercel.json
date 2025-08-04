@@ -20,6 +20,8 @@
   "env": {
     "DJANGO_SETTINGS_MODULE": "mysites.settings",
     "PYTHONUNBUFFERED": "1"
+  },
+  "static": {
+    "directory": "staticfiles_build"
   }
 }
-
