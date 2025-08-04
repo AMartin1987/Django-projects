@@ -1,6 +1,5 @@
 {
   "version": 2,
- {
   "builds": [
     {
       "src": "mysites/wsgi.py",
@@ -23,4 +22,3 @@
     "PYTHONUNBUFFERED": "1"
   }
 }
-
