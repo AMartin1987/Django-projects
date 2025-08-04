@@ -15,3 +15,4 @@ def test(request):
 urlpatterns += [
     path('test/', test),
 ]
+

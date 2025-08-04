@@ -22,8 +22,9 @@ env = environ.Env()
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
+BASE_DIR = Path(__file__).resolve().parent.parent
+print(BASE_DIR / 'blog' / 'static')
+print(os.path.join(BASE_DIR, 'blog', 'static'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -130,16 +131,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-STATIC_URL = '/blog/static/'
+STATIC_URL = '/blog/static/'  # URL pública para acceder a archivos estáticos
 
-# Esto indica la carpeta raíz de archivos estáticos para collectstatic
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Opcional en desarrollo
-
-# Añadí esta línea para que Django busque los archivos estáticos dentro de las apps
 STATICFILES_DIRS = [
-    # Opcional, si tienes una carpeta global de estáticos fuera de apps
-    # Pero en tu caso no parece necesaria
+    BASE_DIR / 'blog' / 'static',  # donde están tus archivos estáticos
 ]
+
+# Esto es para producción, donde Django copia todos los archivos estáticos para servirlos.
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Django detecta automáticamente las carpetas static dentro de las apps.
 
