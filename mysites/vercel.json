@@ -1,13 +1,14 @@
 {
   "builds": [
-    { "src": "vercel_wsgi.py", "use": "@vercel/python" }
+    {
+      "src": "vercel_wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    }
   ],
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "headers": { "cache-control": "public, max-age=31536000, immutable" },
-      "dest": "/static/$1"
-    },
     {
       "src": "/(.*)",
       "dest": "vercel_wsgi.py"
