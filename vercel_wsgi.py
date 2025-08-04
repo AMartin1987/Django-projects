@@ -1,5 +1,4 @@
 import os
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysites.settings')
 
 from mysites.wsgi import application
 
