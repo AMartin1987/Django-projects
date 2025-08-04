@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -131,14 +132,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-STATIC_URL = '/blog/static/'  # URL pública para acceder a archivos estáticos
+STATIC_URL = '/static/'  # URL pública para acceder a archivos estáticos
 
 STATICFILES_DIRS = [
     BASE_DIR / 'blog' / 'static',  # donde están tus archivos estáticos
 ]
 
-# Esto es para producción, donde Django copia todos los archivos estáticos para servirlos.
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # carpeta donde collectstatic pone los archivos
+
+# Opcional para compresión y cache
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Django detecta automáticamente las carpetas static dentro de las apps.
 
