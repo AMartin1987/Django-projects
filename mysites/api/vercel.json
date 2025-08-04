@@ -6,9 +6,15 @@
   },
   "routes": [
     {
+      "src": "/staticfiles/(.*)",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
+      "dest": "/staticfiles/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "api/vercel_wsgi.py"
     }
   ]
 }
+
 

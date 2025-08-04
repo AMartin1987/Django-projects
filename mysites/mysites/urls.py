@@ -28,3 +28,12 @@ urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+
+    from django.http import HttpResponse
+
+def test_view(request):
+    return HttpResponse("App funcionando!")
+
+urlpatterns += [
+    path('test/', test_view),
+]
