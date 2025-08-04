@@ -14,8 +14,10 @@ from whitenoise import WhiteNoise
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysites.settings')
 
 application = get_wsgi_application()
-app = WhiteNoise(application, root='/var/task/staticfiles_build/')
 
+# Usar la misma carpeta que STATIC_ROOT
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+application = WhiteNoise(application, root=os.path.join(BASE_DIR, 'static'))
 
 
 
