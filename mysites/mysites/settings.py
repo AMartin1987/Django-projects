@@ -22,7 +22,7 @@ env = environ.Env()
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 SITE_ID = 1
 
 # Quick-start development settings - unsuitable for production
@@ -132,11 +132,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'blog', 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'blog', 'static')]  # si tenés archivos estáticos ahí
 
-# WhiteNoise config
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')  # <== esta carpeta debe existir luego del collectstatic
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
 
 # ckeditor upload path
 
