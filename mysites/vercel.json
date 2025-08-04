@@ -1,7 +1,7 @@
 {
   "functions": {
     "vercel_wsgi.py": {
-      "runtime": "python3.11"
+      "runtime": "vercel-python@0.7.0"
     }
   },
   "routes": [
@@ -11,15 +11,3 @@
     }
   ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
