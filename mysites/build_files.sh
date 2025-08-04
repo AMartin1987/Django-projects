@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "Building the project..."
-python3 -m pip install -r requirements.txt
-python3 manage.py collectstatic --noinput --clear
-echo "Build finished"
+# Instala las dependencias
+pip install -r requirements.txt
+
+# Recopila los archivos estáticos en la carpeta 'staticfiles'
+python3 manage.py collectstatic --noinput
