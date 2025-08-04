@@ -3,18 +3,12 @@
   "builds": [
     {
       "src": "mysites/manage.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "headers": {
-        "cache-control": "public,max-age=31536000,immutable"
-      },
       "dest": "/mysites/blog/static/$1"
     },
     {
@@ -27,6 +21,7 @@
     "PYTHONPATH": "mysites"
   }
 }
+
 
 
 
