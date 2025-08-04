@@ -131,7 +131,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-STATIC_URL = '/static/'
+STATIC_URL = '/public/static/'
 
 # Carpeta donde 'collectstatic' pondrá los archivos estáticos para producción
 STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static')
