@@ -1,13 +1,14 @@
 {
   "functions": {
-    "vercel_wsgi.py": {
+    "api/vercel_wsgi.py": {
       "runtime": "vercel-python@0.7.0"
     }
   },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "vercel_wsgi.py"
+      "dest": "api/vercel_wsgi.py"
     }
   ]
 }
+
