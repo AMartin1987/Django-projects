@@ -22,9 +22,10 @@ env = environ.Env()
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
 SITE_ID = 1
-print("BASE_DIR:", Path(__file__).resolve().parent.parent)
+print("BASE_DIR:", Path(__file__).resolve().parent.parent.parent)
 print("STATIC_ROOT:", os.path.join(Path(__file__).resolve().parent.parent, 'public/static'))
 
 # Quick-start development settings - unsuitable for production
