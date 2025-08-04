@@ -7,3 +7,11 @@ urlpatterns = [
     path('posts_by_category/<int:category_id>/', views.category, name='posts_by_category'),
 ]
 
+from django.http import HttpResponse
+
+def test(request):
+    return HttpResponse("Test OK")
+
+urlpatterns += [
+    path('test/', test),
+]
