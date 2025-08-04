@@ -1,23 +1,17 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "mysites/wsgi.py",
-      "use": "@vercel/python"
-    }
-  ],
   "routes": [
     {
       "src": "/blog/static/(.*)",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
       "dest": "/blog/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "mysites/wsgi.py"
+      "dest": "manage.py"
     }
   ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "mysites.settings",
-    "PYTHONPATH": "mysites"
-  }
+  "builds": [
+    { "src": "manage.py", "use": "@vercel/python" }
+  ]
 }
+

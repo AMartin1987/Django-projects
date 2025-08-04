@@ -130,10 +130,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-# STATICFILES_DIRS y STATIC_ROOT no se usan para collectstatic
 STATIC_URL = '/blog/static/'
 
-STATICFILES_STORAGE = None
+# Esto indica la carpeta raíz de archivos estáticos para collectstatic
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Opcional en desarrollo
+
+# Añadí esta línea para que Django busque los archivos estáticos dentro de las apps
+STATICFILES_DIRS = [
+    # Opcional, si tienes una carpeta global de estáticos fuera de apps
+    # Pero en tu caso no parece necesaria
+]
+
+# Django detecta automáticamente las carpetas static dentro de las apps.
 
 # ckeditor upload path
 
