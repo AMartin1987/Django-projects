@@ -1,9 +1,7 @@
 {
-  "functions": {
-    "api/wsgi.py": {
-      "runtime": "python3.11"
-    }
-  },
+  "builds": [
+    { "src": "api/wsgi.py", "use": "@vercel/python" }
+  ],
   "routes": [
     {
       "src": "/staticfiles/(.*)",
@@ -15,6 +13,7 @@
     }
   ]
 }
+
 
 
 
