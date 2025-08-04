@@ -131,9 +131,12 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+
+# Ponemos STATIC_ROOT un nivel arriba para que quede en la raíz del repo
+STATIC_ROOT = os.path.join(BASE_DIR.parent, 'static')
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = []
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # <== esta carpeta debe existir luego del collectstatic
+STATICFILES_DIRS = []  # No usás carpetas extra para estáticos durante dev
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
