@@ -131,15 +131,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-STATIC_URL = '/public/static/'
-
-# Carpeta donde 'collectstatic' pondrá los archivos estáticos para producción
-STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static')
-
-# Opcionalmente, para desarrollo, si usas archivos estáticos dentro de apps:
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mysites', 'static'),
-]
+STATIC_URL = '/static/'
 
 # ckeditor upload path
 
