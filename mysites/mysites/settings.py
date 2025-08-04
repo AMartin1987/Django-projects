@@ -132,18 +132,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-STATIC_URL = '/static/'  # URL pública para acceder a archivos estáticos
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'blog' / 'static',  # donde están tus archivos estáticos
+    BASE_DIR / 'blog' / 'static',
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # carpeta donde collectstatic pone los archivos
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Opcional para compresión y cache
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Django detecta automáticamente las carpetas static dentro de las apps.
 
 # ckeditor upload path
 
