@@ -6,6 +6,19 @@
       "dest": "/blog/static/$1"
     },
     {
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
+      "dest": "/blog/static/$1"
+    },
+    {
+      "src": "/test/?",
+      "dest": "mysites/wsgi.py"
+    },
+    {
+      "src": "/$",
+      "dest": "mysites/wsgi.py"
+    },
+    {
       "src": "/(.*)",
       "dest": "mysites/wsgi.py"
     }
