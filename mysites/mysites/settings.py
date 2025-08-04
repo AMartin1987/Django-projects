@@ -131,7 +131,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 # STATICFILES_DIRS y STATIC_ROOT no se usan para collectstatic
-STATIC_URL = '/static/'
+STATIC_URL = '/blog/static/'
+
 STATICFILES_STORAGE = None
 
 # ckeditor upload path
