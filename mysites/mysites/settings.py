@@ -133,7 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = []
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')  # <== esta carpeta debe existir luego del collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # <== esta carpeta debe existir luego del collectstatic
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
