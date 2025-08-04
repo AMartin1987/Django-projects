@@ -1,7 +1,7 @@
 {
   "version": 2,
   "builds": [
-    { "src": "vercel_wsgi.py", "use": "@vercel/python" }
+    { "src": "mysites/wsgi.py", "use": "@vercel/python" }
   ],
   "routes": [
     {
@@ -11,10 +11,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "vercel_wsgi.py"
+      "dest": "mysites/wsgi.py"
     }
   ]
 }
+
 
 
 
