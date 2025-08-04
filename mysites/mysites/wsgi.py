@@ -7,14 +7,18 @@ For more information on this file, see
 https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 """
 
-import os
+import sys
+print("WSGI application starting...", file=sys.stderr)
+
 from django.core.wsgi import get_wsgi_application
 
+import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysites.settings')
 
 application = get_wsgi_application()
 
-app = application  # para Vercel
+print("WSGI application loaded", file=sys.stderr)
+
 
 
 
