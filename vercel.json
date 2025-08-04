@@ -1,19 +1,33 @@
 {
   "version": 2,
   "builds": [
-    { "src": "mysites/manage.py", "use": "@vercel/python" }
+    {
+      "src": "mysites/manage.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
+    }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/public/static/$1"
+      "headers": {
+        "cache-control": "public,max-age=31536000,immutable"
+      },
+      "dest": "/mysites/blog/static/$1"
     },
     {
       "src": "/(.*)",
       "dest": "mysites/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "mysites.settings",
+    "PYTHONPATH": "mysites"
+  }
 }
+
 
 
 
