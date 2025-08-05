@@ -139,6 +139,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'blog' / 'static',
 ]
 
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
 # WhiteNoise para servir estáticos en producción
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
