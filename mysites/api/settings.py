@@ -35,6 +35,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+SITE_ID=2 # "1" for localhost, "2" for amartinblog.vercel.app
 
 # Application definition
 INSTALLED_APPS = [
