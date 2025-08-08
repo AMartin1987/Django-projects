@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import environ, os
-
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -33,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['amartinblog.vercel.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*.vercel.app', '127.0.0.1', 'localhost']
 
 SITE_ID=2 # "1" for localhost, "2" for amartinblog.vercel.app
 
