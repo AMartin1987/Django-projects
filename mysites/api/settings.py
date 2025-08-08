@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'blog',
     'ckeditor', #CKEditor config
     'ckeditor_uploader', #CKEditor media uploader
-    #'django.contrib.sites', 
+    'django.contrib.sites', 
 ]
 
 MIDDLEWARE = [
