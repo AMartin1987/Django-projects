@@ -1,4 +1,5 @@
 dump_vercel.backup
+staticfiles/
 
 #Python Environment
 venv311
