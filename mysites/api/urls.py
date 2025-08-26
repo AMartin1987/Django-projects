@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
 from django.http import HttpResponse
+from blog.feeds import LatestPostsFeed
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("blog.urls")),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
+    path('feed/rss/', LatestPostsFeed(), name="rss_feed")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
