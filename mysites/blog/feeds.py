@@ -14,11 +14,11 @@ class LatestPostsFeed(Feed):
 
     def item_title(self, item):
         # Usa el título de la publicación.
-        return item.titulo
+        return item.title
 
     def item_description(self, item):
         # Usa el contenido de la publicación. Puedes usar un resumen o el contenido completo.
-        return item.contenido[:200]  # Limitar a los primeros 200 caracteres
+        return item.content[:200]  # Limitar a los primeros 200 caracteres
 
     def item_link(self, item):
         # Devuelve el enlace a la publicación individual.
