@@ -13,19 +13,25 @@ def linkedin_auth(request):
     to grant permissions to the app.
     """
     client_id = settings.LINKEDIN_CLIENT_ID
-    redirect_uri = 'https://amartinblog.vercel.app/linkedin/callback/'
+    redirect_uri = 'https://django-projects-git-develop-alejandra-martins-projects.vercel.app/linkedin/callback/'
     
     # Scope define los permisos que la aplicación necesita.
     # 'r_liteprofile' es para obtener tu ID de perfil.
     # 'w_member_social' es para poder publicar en tu nombre.
     scope = 'r_liteprofile w_member_social'
-    
+        
+    # 🕵️‍♀️ Agrega estas dos líneas para depurar
+    print(f"DEBUG: El client_id es '{client_id}'")
+
     auth_url = (f"https://www.linkedin.com/oauth/v2/authorization?"
                 f"response_type=code&"
                 f"client_id={client_id}&"
                 f"redirect_uri={redirect_uri}&"
                 f"scope={scope}")
     
+    # 🕵️‍♀️ Y esta línea para ver la URL completa
+    print(f"DEBUG: La URL de autenticación es: {auth_url}")
+
     return redirect(auth_url)
 
 # 2. Maneja la respuesta de LinkedIn y obtiene el token de acceso
@@ -37,7 +43,7 @@ def linkedin_callback(request):
     """
     client_id = settings.LINKEDIN_CLIENT_ID
     client_secret = settings.LINKEDIN_CLIENT_SECRET
-    redirect_uri = 'https://amartinblog.vercel.app/linkedin/callback/'
+    redirect_uri = 'https://django-projects-git-develop-alejandra-martins-projects.vercel.app/linkedin/callback/'
     code = request.GET.get('code')
 
     # Si no hay código en la URL, algo salió mal
