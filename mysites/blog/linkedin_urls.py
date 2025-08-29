@@ -1,6 +1,6 @@
 # blog/linkedin_urls.py
 from django.urls import path
-from .templates import linkedin_views
+from . import linkedin_views
 
 urlpatterns = [
     path('auth/', linkedin_views.linkedin_auth, name='linkedin_auth'),
