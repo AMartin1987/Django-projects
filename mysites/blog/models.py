@@ -37,6 +37,18 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
+class LinkedInAuthToken(models.Model):
+    """
+    Modelo para almacenar el token de acceso de LinkedIn.
+    """
+    access_token = models.CharField(max_length=512, unique=True, help_text="Token de acceso para la API de LinkedIn.")
+    expires_in = models.IntegerField(help_text="Tiempo de vida del token en segundos.")
+    created_at = models.DateTimeField(auto_now_add=True)
+    profile_urn = models.CharField(max_length=128, help_text="URN del perfil de LinkedIn para publicar.")
+
+    def __str__(self):
+        return self.profile_urn
+    
 
 
 

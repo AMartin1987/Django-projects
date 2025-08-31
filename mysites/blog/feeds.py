@@ -10,7 +10,7 @@ class LatestPostsFeed(Feed):
 
     def items(self):
         # Devuelve las 5 últimas publicaciones.
-        return Post.objects.filter(status=True).order_by('-updated_on')[:5]
+        return Post.objects.filter(status=1).order_by('-updated_on')[:5]
 
     def item_title(self, item):
         # Usa el título de la publicación.
