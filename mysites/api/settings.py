@@ -33,7 +33,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
 
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'blog',
     'ckeditor', #CKEditor config
     'ckeditor_uploader', #CKEditor media uploader
+    'tracking', 
     'django.contrib.sites', 
 ]
 
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'tracking.middleware.VisitorTrackingMiddleware',
 ]
 
 ROOT_URLCONF = 'api.urls'

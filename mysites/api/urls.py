@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("blog.urls")),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
-    path('feed/rss/', LatestPostsFeed(), name="rss_feed")
+    path('feed/rss/', LatestPostsFeed(), name="rss_feed"),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
