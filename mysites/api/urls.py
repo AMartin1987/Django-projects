@@ -23,7 +23,7 @@ from blog.feeds import LatestPostsFeed
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("blog.urls")),
-    re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
+    re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
     path('feed/rss/', LatestPostsFeed(), name="rss_feed"),
 
 ]
