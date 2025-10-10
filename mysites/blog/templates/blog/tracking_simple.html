@@ -1,6 +1,7 @@
 {% extends "blog/layout.html" %}
 
 {% block content %}
+{% load tz %}  {# para usar filtros de zona horaria #}
 <h1>📊 Estadísticas del blog</h1>
 
 <p><strong>Total de visitas:</strong> {{ total_visitas }}</p>
@@ -19,7 +20,7 @@
     <td>{{ v.city }}</td>
     <td>{{ v.country }}</td>
     <td>{{ v.user_agent|truncatechars:100 }}</td>
-    <td>{{ v.start_time }}</td>
+    <td>{{ v.start_time|localtime|date:"d/m/Y H:i:s" }}</td>  {# hora en Madrid #}
   </tr>
   {% empty %}
   <tr><td colspan="5">No hay visitas registradas aún.</td></tr>
