@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.views import generic
+from django.contrib.auth.decorators import login_required, user_passes_test
+
 from .models import Post
-from django.shortcuts import render
 from tracking.models import Visitor
 from geoip2.database import Reader
 
 GEOIP_DB_PATH = "api/geo/GeoLite2-City.mmdb"
+
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -16,12 +18,20 @@ class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
 
+
 def category(request, category_id):
     posts_by_category = Post.objects.filter(category__id=category_id)
     return render(request, "blog/posts_by_category.html", {
         "posts_by_category": posts_by_category,
     })
 
+
+def is_superuser(user):
+    return user.is_superuser
+
+
+@login_required
+@user_passes_test(is_superuser)
 def tracking_simple(request):
     visitas = Visitor.objects.all().order_by('-start_time')[:20]
     total_visitas = Visitor.objects.count()
@@ -35,7 +45,7 @@ def tracking_simple(request):
                 response = reader.city(ip)
                 city = response.city.name or "Desconocido"
                 country = response.country.name or "Desconocido"
-            except:
+            except Exception:
                 pass
             geo_info.append({
                 "ip": ip,
